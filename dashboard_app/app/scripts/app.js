@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dbApp',[
+angular.module('dashboard',[
 	'ngAnimate',
     'ngCookies',
     'ngMessages',
@@ -18,7 +18,27 @@ angular.module('dbApp',[
 		.state('root',{
 			url:'/root',
 			templateUrl:'templates/root.html',
-			controller:'rootController'
+			controller:'rootController',
+			abstract:true
+		})
+		.state('root.work',{
+			url:'/work',
+			templateUrl:'templates/work.html',
+			controller:'workController'
+		})
+		.state('root.overview',{
+			url:'/overview',
+			templateUrl:'templates/overview.html',
+			controller:'overviewController'
+		})
+		.state('root.producer',{
+			url:'/producer',
+			templateUrl:'templates/producer.html',
+			controller:'producerController'
+		})
+		.state('root.contact',{
+			url:'contact',
+			templateUrl:'templates/contact.html',
+			controller:'contactController'
 		});
-
 });
