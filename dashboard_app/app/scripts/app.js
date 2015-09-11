@@ -13,13 +13,19 @@ angular.module('dashboard',[
 	 	.state('login',{
 			url:'/login',
 			templateUrl:'templates/login.html',
-			controller:'loginController'
+			controller:'loginController',
+			data: {
+          requireLogin: false
+        }
 		})
 		.state('root',{
 			url:'/root',
 			templateUrl:'templates/root.html',
 			controller:'rootController',
-			abstract:true
+			abstract:true,
+			data: {
+          requireLogin: true
+        }
 		})
 		.state('root.work',{
 			url:'/work',
