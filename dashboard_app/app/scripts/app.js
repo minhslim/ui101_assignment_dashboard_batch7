@@ -22,7 +22,7 @@ angular.module('dbApp',[
 			url:'/root',
 			templateUrl:'templates/root.html',
 			controller:'rootController',
-			//abstract:true,
+			abstract:true,
 			// data: {
    //        requireLogin: true
    //      }
