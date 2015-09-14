@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dashboard')
+angular.module('dbApp')
 	.factory('getUser',function($resource){
 		return $resource('/api/getuser',{},{
 			getUser:{method:'GET'}

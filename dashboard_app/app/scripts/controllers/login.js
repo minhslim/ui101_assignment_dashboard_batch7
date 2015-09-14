@@ -1,8 +1,19 @@
-var app = angular.module("dashboard", []);
-app.controller('loginController',function($scope,$http){
-	function login(data){
-		var promise=$http.post('/api/login',data);
-		console.log(promise);
-	}
-	
-});
+'use strict';
+angular.module('dbApp')
+    .controller('loginController', function($scope, $http, $state) {
+        $scope.login = function() {
+            $http.post('/api/login', {
+                    userName: $scope.userName,
+                    password: $scope.password
+                })
+                .success(function(response) {
+                    $state.go('root1');
+                    console.log(response);
+                })
+                .error(function(response) {
+                    $scope.msgtxt = 'error Username or Password!';
+                    $scope.password = "";
+                    $state.go('login');
+                });
+        };
+    });

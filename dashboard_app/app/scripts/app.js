@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dashboard',[
+angular.module('dbApp',[
 	'ngAnimate',
     'ngCookies',
     'ngMessages',
@@ -14,20 +14,20 @@ angular.module('dashboard',[
 			url:'/login',
 			templateUrl:'templates/login.html',
 			controller:'loginController',
-			data: {
-          requireLogin: false
-        }
+			// data: {
+   //        requireLogin: false
+   //      }
 		})
-		.state('root',{
-			url:'/root',
-			templateUrl:'templates/root.html',
+		.state('root1',{
+			url:'/root1',
+			templateUrl:'templates/root1.html',
 			controller:'rootController',
-			abstract:true,
-			data: {
-          requireLogin: true
-        }
+			//abstract:true,
+			// data: {
+   //        requireLogin: true
+   //      }
 		})
-		.state('root.work',{
+		.state('root1.work',{
 			url:'/work',
 			templateUrl:'templates/work.html',
 			controller:'workController'

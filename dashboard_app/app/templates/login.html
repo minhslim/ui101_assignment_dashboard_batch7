@@ -1,39 +1,4 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="
-    ../../bower_components/bootstrap/dist/css/bootstrap.min.css" media="">
-    <link rel="stylesheet" type="text/css" href="../assets/styles/login.css">
-    <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <title>Login</title>
-</head>
-
-<body ng-app="">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-2"></div>
-            <div id="login" class="col-md-4 col-sm-4 col-xs-8">
-                <p><b>Login</b></p>
-                <hr>
-                <input id="username" type="text" name="username" placeholder = "Username" ng-model="user.username" required>
-                <br>
-                <br>
-                <input id="password" type="text" name="password" placeholder="Password" ng-model="user.password" required>
-                <br>
-                <br>
-                <button disabled id="button" type="button" value="Login" ng-click="login">Login</button>
-                <span class="label label-danger">{{errormessage}}</span>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-2"></div>
-=======
-<div class="container">
     <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-2"></div>
         <div id="login" class="col-md-4 col-sm-4 col-xs-8">
@@ -42,12 +7,13 @@
             <input id="username" type="text" name="username" placeholder="Username" ng-model="userName">
             <br>
             <br>
-            <input id="password" type="text" name="password" placeholder="Password" ng-model="password">
+            <input id="password" type="password" name="password" placeholder="Password" ng-model="password">
             <br>
             <br>
-            <button disabled id="button" type="button" value="Login">Login</button>
->>>>>>> origin/dashboard@0.1.0-login
+            <button id="button" type="button" value="Login"  ng-click="login(user)">Login</button>
+            <br/>
+            <span class="errormessage">{{msgtxt}}</span>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-2"></div>
+       
     </div>
-</div>
+

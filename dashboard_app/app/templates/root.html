@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang "en-us">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="HTML5 version">
-    <meta name="keyworks" content="root">
-    <meta name="author" content="Season">
-    <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/styles/sidebar.css">
-    <script type="text/javascript" src="../../bower_components/bootstrap/dist/css/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
-</head>
 
 <body>
   <script type="text/javascript">
-        var app = angular.module('MyApp', [])
+        var app = angular.module('dbApp', [])
         app.controller('MyController', function ($scope) {
             $scope.CurrentDate = new Date();
             $scope.toggle = function() {
@@ -61,7 +47,7 @@
             }
         });
     </script>
-    <div class="container" ng-app="MyApp" ng-controller="MyController">
+    <div class="container" ng-app="dbApp" ng-controller="MyController">
         <div class="row">
             <nav class="navbar navbar-default">
               <ul id="bignav">
@@ -77,17 +63,19 @@
                 <ul>
                     <li class="glyphicon glyphicon-cloud" ng-style="myStyle" ng-click="toggle()"><a ng-style="linkStyle" id="link" href="">Overview</a></li>
                     <br>
-                    <li class="glyphicon glyphicon-tags" ng-style="myStyle1" ng-click="toggle1()"><a ng-style="linkStyle1" id="link" href="">Work</a></li>
+                    <li class="glyphicon glyphicon-tags" ng-style="myStyle1" ng-click="toggle1()"><a ng-style="linkStyle1" id="link" href="" ui-sref="root.work">Work</a></li>
                     <br>
                     <li class="glyphicon glyphicon-tint" ng-style="myStyle2" ng-click="toggle2()"><a ng-style="linkStyle2" id="link" href="">Producer</a></li>
                     <br>
                     <li class="glyphicon glyphicon-th-large" ng-style="myStyle3" ng-click="toggle3()"><a ng-style="linkStyle3" id="link" href="">Contact</a></li>
                 </ul>
             </div>
-            <div class="col-md-8 col-sx-12 col-sm-12"></div>
+            <div class="col-md-8 col-sx-12 col-sm-12">55555555555
+                <ui-view></ui-view>
+            </div>
         </div>
         
     </div>
 </body>
 
-</html>
+
