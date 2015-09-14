@@ -18,16 +18,16 @@ angular.module('dbApp',[
    //        requireLogin: false
    //      }
 		})
-		.state('root1',{
-			url:'/root1',
-			templateUrl:'templates/root1.html',
+		.state('root',{
+			url:'/root',
+			templateUrl:'templates/root.html',
 			controller:'rootController',
 			//abstract:true,
 			// data: {
    //        requireLogin: true
    //      }
 		})
-		.state('root1.work',{
+		.state('root.work',{
 			url:'/work',
 			templateUrl:'templates/work.html',
 			controller:'workController'
