@@ -1,38 +1,19 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="
-    ../../bower_components/bootstrap/dist/css/bootstrap.min.css" media="">
-    <link rel="stylesheet" type="text/css" href="../assets/styles/login.css">
-    <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <title>Login</title>
-</head>
-
-<body ng-app="">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-2"></div>
-            <div id="login" class="col-md-4 col-sm-4 col-xs-8">
-                <p><b>Login</b></p>
-                <hr>
-                <input id="username" type="text" name="username" placeholder = "Username">
-                <br>
-                <br>
-                <input id="password" type="text" name="password" placeholder="Password" >
-                <br>
-                <br>
-                <button disabled id="button" type="button" value="Login">Login</button>
-                
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-2"></div>
+<form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-2"></div>
+        <div ng-init="myButton=true" id="login" class="col-md-4 col-sm-4 col-xs-8">
+            <p><b>Login</b></p>
+            <hr>
+            <input id="username" type="text" name="username" placeholder="Username" ng-model="userName" ng-change="formChanged=true" ng-keyup = "key()">
+            <br>
+            <br>
+            <input id="password" type="password" name="password" placeholder="Password" ng-model="password" ng-change="formChanged=true" ng-keyup = "key()">
+            <br>
+            <br>
+            <button id="button" type="submit" value="Login" ng-click="login()" ng-disabled="!formChanged" ng-style = "one">Login</button>
         </div>
+        <div class="col-md-4 col-sm-4 col-xs-2"></div>
     </div>
-</body>
-
-</html>
+</div>
+</form>

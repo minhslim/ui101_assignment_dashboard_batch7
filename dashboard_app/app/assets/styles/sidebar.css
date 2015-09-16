@@ -1,5 +1,6 @@
 body {
     font-family: Malgun Gothic;
+    background: none;
 }
 
 .container {
@@ -36,4 +37,13 @@ button {
 
 #nav {
     display: inline;
+}
+
+#navbck:hover{
+    background-color: #FF3300;
+    width: 65%;
+    color: white;
+}
+#navbck:hover a{
+    color: white;
 }
