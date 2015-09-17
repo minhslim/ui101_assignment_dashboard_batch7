@@ -1,0 +1,58 @@
+body {
+    font-family: Malgun Gothic;
+    background: none;
+}
+
+.container {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+
+#link {
+    text-decoration: none;
+    padding-left: 15px;
+    font-size: 18px;
+    color: black;
+    font-family: Malgun Gothic;
+}
+
+button {
+    float: right;
+    margin-right: 10px;
+}
+
+#bignav {
+    padding-top: 6px;
+}
+
+#nav {
+    display: inline;
+}
+
+#navbck:hover{
+    background-color: #FF3300;
+    width: 100%;
+    color: white;
+}
+#navbck:hover a{
+    color: white;
+}
+
+#subview{
+    margin-top: 0px;
+    margin-left: 0;
+}
+
+.row{
+    margin-top: 30px;
+}
