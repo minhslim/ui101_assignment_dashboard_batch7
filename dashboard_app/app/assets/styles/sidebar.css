@@ -41,9 +41,14 @@ button {
 
 #navbck:hover{
     background-color: #FF3300;
-    width: 65%;
+    width: 100%;
     color: white;
 }
 #navbck:hover a{
     color: white;
+}
+
+#subview{
+    margin-top: 0px;
+    margin-left: 0;
 }
