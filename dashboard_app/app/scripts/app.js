@@ -13,38 +13,31 @@ angular.module('dbApp',[
 	 	.state('login',{
 			url:'/login',
 			templateUrl:'templates/login.html',
-			controller:'loginController',
-			// data: {
-   //        requireLogin: false
-   //      }
+			controller:'login'
 		})
 		.state('root',{
 			url:'/root',
 			templateUrl:'templates/root.html',
-			controller:'rootController',
-			abstract:true,
-			// data: {
-   //        requireLogin: true
-   //      }
-		})
-		.state('root.work',{
-			url:'/work',
-			templateUrl:'templates/work.html',
-			controller:'workController'
+			controller:'rootController'
 		})
 		.state('root.overview',{
-			url:'/overview',
+			url:'/root/overview',
 			templateUrl:'templates/overview.html',
-			controller:'overviewController'
+			controller:'overview'
 		})
-		.state('root.producer',{
-			url:'/producer',
-			templateUrl:'templates/producer.html',
-			controller:'producerController'
+		.state('root.work',{
+			url:'/root/work',
+			templateUrl:'templates/work.html',
+			controller:'work'
 		})
 		.state('root.contact',{
-			url:'contact',
+			url:'/root/contact',
 			templateUrl:'templates/contact.html',
-			controller:'contactController'
+			controller:'contact'
+		})
+		.state('root.producer',{
+			url:'/root/producer',
+			templateUrl:'templates/producer.html',
+			controller:'producer'
 		});
 });
