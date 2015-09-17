@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-4 col-xs-12">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Design<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-click="displayList()"><a href="">List</a></li>
+                <li ng-click="displayCard()"><a href="">Card</a></li>
+            </ul>
+            <button type="button" class="btn btn-default" ng-click="addItem()">Add Item</button>
+        </div>
+    </div>
+    <div class="col-md-8 col-xs-12">
+        <form class="form-inline">
+            <input type="text" ng-model="search.title" class="form-control" placeholder="Name">
+            <input type="text" ng-model="search.author" class="form-control" placeholder="Author">
+            <input type="text" ng-model="search.like"  class="form-control" placeholder="Like">
+            <input type="text" ng-model="search.comment" class="form-control" placeholder="Comment">
+        </form>
+    </div>
+</div>
+<div  ng-show="displaySwitch" class="row">
+    <div ng-repeat="work in works|filter:search" class="col-md-4">
+        <img src="{{work.image}}">
+        <h2>{{work.title}}</h2>
+        <span>{{work.author}}</span>
+        <span>{{work.like}}</span>
+        <span>{{work.comment}}</span>
+        <button ng-click="editItem(work)">Edit</button>
+        <button ng-click="deleteItem(work)">Delete</button>
+    </div>
+</div>
+<div ng-hide="displaySwitch">
+    <table class="table table-hover">
+        <tr>
+            <td class="tableHead" ng-click="sortingBy('title')">Name</td>
+            <td class="tableHead" ng-click="sortingBy('author')">Author</td>
+            <td class="tableHead" ng-click="sortingBy('like')">Like</td>
+            <td class="tableHead" ng-click="sortingBy('comment')">Comment</td>
+            <td>Modify</td>
+            <td>Remove</td>
+        </tr>
+        <tr ng-repeat="work in works | orderBy: sorting:reverse |filter:search">
+            <td>{{work.title}}</td>
+            <td>{{work.author}}</td>
+            <td>{{work.like}}</td>
+            <td>{{work.comment}}</td>
+            <td>
+                <button ng-click="editItem(work)">Edit</button>
+            </td>
+            <td>
+                <button ng-click="deleteItem(work)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+  <editdirective ng-show="edialogdisplay"></editdirective>
+  <adddirective ng-show="adialogdisplay"></adddirective>
+
