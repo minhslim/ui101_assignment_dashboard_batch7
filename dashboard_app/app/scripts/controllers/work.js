@@ -1,5 +1,5 @@
 angular.module('dbApp')
-    .controller('workController', function($scope, $window, $http, $modal) {
+    .controller('work', function($scope, $window, $http, $modal) {
         $http.get('/api/work')
             .success(function(data) {
                 $scope.works = data.works;
