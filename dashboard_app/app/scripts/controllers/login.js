@@ -1,13 +1,13 @@
 'use strict';
 angular.module('dbApp')
-    .controller('loginController', function($scope, $http, $state) {
+    .controller('login', function($scope, $http, $state) {
         $scope.login = function() {
             $http.post('/api/login', {
                     userName: $scope.userName,
                     password: $scope.password
                 })
                 .success(function(response) {
-                    $state.go('root1');
+                    $state.go('root/work');
                     console.log(response);
                 })
                 .error(function(response) {
