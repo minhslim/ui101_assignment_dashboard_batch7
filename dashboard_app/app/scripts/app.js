@@ -13,7 +13,7 @@ angular.module('dbApp',[
 	 	.state('login',{
 			url:'/login',
 			templateUrl:'templates/login.html',
-			controller:'loginController'
+			controller:'login'
 		})
 		.state('root',{
 			url:'/root',

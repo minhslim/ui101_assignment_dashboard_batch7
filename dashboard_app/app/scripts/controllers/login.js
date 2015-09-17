@@ -30,7 +30,7 @@ app.controller("login", function($scope, $http, $state,$cookieStore, authenticat
          //     console.log("SORRY");
          // });
         //authenticate.getUser()
-        console.log(authenticate.getUser());
+       // console.log(authenticate.getUser());
     //     var promise = $http.post('/api/login', {
     //          userName: $scope.userName,
     //          password: $scope.password
