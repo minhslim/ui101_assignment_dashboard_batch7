@@ -1,4 +1,5 @@
 
+
 var app = angular.module('dbApp');
 
 app.factory('getUser',function($resource,$cookieStore){
@@ -21,3 +22,4 @@ app.factory('getUser',function($resource,$cookieStore){
  //                console.log("SORRY");
  //            });
 });
+
