@@ -85,12 +85,17 @@ angular.module('dbApp')
             $scope.editauthor = '';
             $scope.editlike = '';
             $scope.editcomment = '';
-
+            $scope.adialogdisplay = false;
         };
         $scope.editsubmit = function() {
             $scope.works[indexFlag].title = $scope.edittitle;
             $scope.works[indexFlag].author = $scope.editauthor;
             $scope.works[indexFlag].like = $scope.editlike;
             $scope.works[indexFlag].comment = $scope.editcomment;
+        	$scope.edittitle = '';
+            $scope.editauthor = '';
+            $scope.editlike = '';
+            $scope.editcomment = '';
+            $scope.edialogdisplay = false;
         };
     });
