@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gbApp')
+angular.module('dbApp')
 .factory('session', ['$http', function($http){
 	return{
 		set:function(key,value){
