@@ -1,4 +1,3 @@
-
 var app = angular.module('dbApp');
 
 app.factory('getUser',function($resource,$cookieStore){
