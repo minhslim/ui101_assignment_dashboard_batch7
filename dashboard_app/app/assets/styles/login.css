@@ -1,7 +1,7 @@
-/*body {
+body {
     background: no-repeat fixed center center url("../images/app/background.jpg");
     background-size: cover; 
-}*/
+}
 
 p {
     color: white;
@@ -43,7 +43,4 @@ p {
 
 .container {
     width: 100%;
-}
-.errormessage{
-    color: red;
 }
