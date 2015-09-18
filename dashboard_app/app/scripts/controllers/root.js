@@ -1,4 +1,3 @@
-
 var app = angular.module("dbApp");
 app.controller('rootController', function(getUser, $cookieStore, $scope, $http) {
     var overcolor = "black";
