@@ -7,7 +7,7 @@ app.controller("login", function($scope, $http, $state, $cookieStore, authentica
             'opacity': '1'
         }
     };
-
+    $scope.reminder = true;
     $scope.login = function() {
         $cookieStore.put("user", $scope.userName);
         $cookieStore.put("psw", $scope.password);
@@ -18,6 +18,7 @@ app.controller("login", function($scope, $http, $state, $cookieStore, authentica
 
         } else {
             // Not log the user in
+            $scope.reminder = !$scope.reminder;
             console.log("error");
         }
     }

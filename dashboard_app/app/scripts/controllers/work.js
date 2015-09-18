@@ -23,16 +23,19 @@ angular.module('dbApp')
         $scope.deleteItem = function(removeItem) {
             var items = $scope.works;
             var length = items.length;
-            var removeIndex = -1;
+            	removeIndex = -1;
             for (var i = 0; i < length; i++) {
                 if (angular.equals(items[i], removeItem)) {
                     removeIndex = i;
                     break;
                 }
             }
-            if (window.confirm("Are you sure to delete this item?")) {
-                $scope.works.splice(removeIndex, 1);
-            }
+            // if (window.confirm("Are you sure to delete this item?")) {
+            //     $scope.works.splice(removeIndex, 1);
+            //}
+        };
+        $scope.delsubmit=function(){
+        	$scope.works.splice(removeIndex, 1);
         };
         // $scope.editItem = function() {
         //     var modalInstance = $modal.open({
@@ -48,7 +51,7 @@ angular.module('dbApp')
         // };
         var indexFlag = 0;
         $scope.editItem = function(editItem) {
-            $scope.edialogdisplay = true;
+            // $scope.edialogdisplay = true;
             $scope.edittitle = editItem.title;
             $scope.editauthor = editItem.author;
             $scope.editlike = editItem.like;
@@ -65,16 +68,21 @@ angular.module('dbApp')
             }
         };
         $scope.addItem = function() {
-            $scope.adialogdisplay = true;
+            // $scope.adialogdisplay = true;
+            $scope.edittitle = '';
+            $scope.editauthor = '';
+            $scope.editlike = '';
+            $scope.editcomment = '';
         };
-        $scope.addcancel = function() {
-            $scope.adialogdisplay = false;
-        };
-        $scope.editcancel = function() {
-            $scope.edialogdisplay = false;
-        };
+        // $scope.addcancel = function() {
+        //     $scope.adialogdisplay = false;
+        // };
+        // $scope.editcancel = function() {
+        //     $scope.edialogdisplay = false;
+        // };
         $scope.addsubmit = function() {
             var item = {
+            	image:'',
                 author: $scope.addauthor,
                 comment: $scope.addcomment,
                 like: $scope.addlike,
@@ -85,7 +93,7 @@ angular.module('dbApp')
             $scope.editauthor = '';
             $scope.editlike = '';
             $scope.editcomment = '';
-            $scope.adialogdisplay = false;
+            // $scope.adialogdisplay = false;
         };
         $scope.editsubmit = function() {
             $scope.works[indexFlag].title = $scope.edittitle;
@@ -96,6 +104,6 @@ angular.module('dbApp')
             $scope.editauthor = '';
             $scope.editlike = '';
             $scope.editcomment = '';
-            $scope.edialogdisplay = false;
+            // $scope.edialogdisplay = false;
         };
     });

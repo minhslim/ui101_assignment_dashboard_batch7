@@ -17,7 +17,8 @@ angular.module('dbApp',[
 		})
 		.state('root',{
 			templateUrl:'templates/root.html',
-			controller:'rootController'
+			controller:'rootController',
+			abstract:true
 		})
 		.state('root.overview',{
 			url:'/root/overview',

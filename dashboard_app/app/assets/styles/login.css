@@ -1,7 +1,7 @@
-/*body {
+body {
     background: no-repeat fixed center center url("../images/app/background.jpg");
     background-size: cover; 
-}*/
+}
 
 p {
     color: white;
@@ -15,7 +15,14 @@ p {
 p {
     font-size: 170%;
 }
-
+#remind{
+    color:white;
+    background-color: #FF6633;
+    width:75%;
+    font-size: 115%;
+    margin-left: auto;
+    margin-right:auto;
+}
 #username,
 #password {
     width: 100%;
@@ -38,6 +45,8 @@ p {
     border-top: 0;
     border-bottom: 1px solid #000000;
     opacity:0.7;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
