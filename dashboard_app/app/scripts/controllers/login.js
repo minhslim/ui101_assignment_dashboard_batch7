@@ -1,6 +1,6 @@
 var app = angular.module("dbApp");
 
-app.controller("login", function($scope, $http, $state) {
+app.controller("login", function($scope, $http, $state, $cookieStore, authenticate) {
     $scope.key = function() {
         //alert('test');  
         $scope.one = {
@@ -9,25 +9,17 @@ app.controller("login", function($scope, $http, $state) {
     };
 
     $scope.login = function() {
+        $cookieStore.put("user", $scope.userName);
+        $cookieStore.put("psw", $scope.password);
+        if (authenticate.getUser() === "success") {
+            // Log the user in
+            //console.log("login");
+            $state.go("root.work");
 
-        var promise = $http.post('/api/login', {
-            userName: $scope.userName,
-            password: $scope.password
-        });
-        promise.then(function(response) {
-            if (response.data.authentication === "success") {
-                // Log the user in
-                //console.log("login");
-
-                $state.go("root");
-
-            } else {
-                // Not log the user in
-                console.log("error");
-            }
-        }, function() {
-            console.log("SORRY");
-        });
+        } else {
+            // Not log the user in
+            console.log("error");
+        }
     }
 
 });
