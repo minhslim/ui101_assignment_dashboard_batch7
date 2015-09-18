@@ -1,10 +1,10 @@
 
 
         <div class="row">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default navbar-fixed-top">
               <ul id="bignav">
                 <li id="nav"><img src="../assets/images/app/logo.png"></li>
-                <li id="nav"><span>{{username}}</span></li>
+                <li id="nav">&nbsp;&nbsp;&nbsp;&nbsp;<span>{{username}}</span></li>
                 <li id="nav"><span>{{CurrentDate | date:'MM/dd/yyyy'}}</span></li>
                 <li id="nav"><a href="#/login"><button class="btn btn-default" ng-click="logout()">Log Out</button></a></li>
               </ul>
@@ -22,9 +22,9 @@
                     <li class="glyphicon glyphicon-th-large" ng-style="myStyle3" ng-click="toggle3()" ng-mouseover="express3()" ng-mouseout="out3()" id="navbck"><a ng-style="linkStyle3" id="link" href="#/root/contact">Contact</a></li>
                 </ul>
             </div>
+
             <div class="col-md-10 col-sx-12 col-sm-12" ui-view>
                
-
             </div>
         </div>
         
