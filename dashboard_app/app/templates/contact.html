@@ -1,2 +1,77 @@
+<h2 id="subview">Contact</h2>
+<div>
+    <tabset justified="true">
+        <tab heading="Information">
+            <form role="form" name="myForm" ng-submit="submitForm(myForm.$valid)" class="form-horizontal" novalidate>
+                
+                    <label>First Name</label>
+                    <div class="form-group has-feedback">
+                    <input type="text" placeholder="First Name" class="form-control" id="addit" name="fname" required ng-model='fname' />
+                    <span class="glyphicon glyphicon-tree-conifer form-control-feedback" id="icon"></span>
+                </div>
+              
+                    <label>Last Name</label> 
+                    <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-tree-deciduous form-control-feedback" id="icon"></span>
+                    <input type="text" placeholder="Last Name" class="form-control" id="addit" required ng-model='lname'>
+                </div>
+                
+                    <label>Email</label>
+                    <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback" id="icon"></span>
+                    <input type="text" placeholder="Email" class="form-control" id="addit" required ng-model='email'>
+                </div>
 
- <h2 id="subview">Contact</h2>
+                
+                    <label>Phone</label>
+                    <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-earphone form-control-feedback" id="icon"></span>
+                    <input type="text" placeholder="Phone" class="form-control" id="addit" required ng-model='phone'>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label>Location</label>
+                    <select class="form-control" ng-model="location" ng-options="tab.title for tab in tabs" required>
+                    </select>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <pre class="alert alert-success">The current time is: {{mytime | date:'medium' }}</pre>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <button type="submit" class="btn btn-info" ng-disabled="myForm.$invalid" ng-click="query.active=true">NEXT</button>
+                </div>
+            </form>
+        </tab>
+
+        <tab heading="Query" disabled="myForm.$invalid" active="query.active">
+          <form role="form" name="myForm1" ng-submit="submitForm(myForm1.$valid)" class="form-horizontal" novalidate>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" placeholder="Title" class="form-control" id="addit" required ng-model='title'>
+            </div>
+            <div class="form-group">
+                <label>Content</label>
+                <textarea type="text" rows="6" cols="50" placeholder="Contents of the query should go here.." class="form-control" id="addit"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <select class="form-control" ng-model="format" ng-options="cat.title for cat in cats" required ng-model='category'>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Priority</label>
+                <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']"></rating>
+                <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+            </div>
+            <div class="form-group has-feedback">
+                <button type="submit" class="btn btn-info" ng-disabled="myForm1.$invalid" ng-click="query1.active=true">NEXT</button>
+            </div>
+         </form>
+        </tab>
+        <tab heading="Confirmation" disabled="myForm1.$invalid" active="query1.active">
+            
+        </tab>
+    </tabset>
+</div>
