@@ -9,11 +9,11 @@ app.controller('rootController', function(getUser, $cookieStore, $scope, $http) 
     // $scope.username=$cookieStore.get('username');
     
     //console.log(user);
-    $scope.myStyle1 = {
+    $scope.myStyle = {
                 'border-left': '3px solid #FF3300',
                 'color': '#FF3300'
             };
-    $scope.linkStyle1 = {
+    $scope.linkStyle = {
                 'color': '#FF3300'
             };
 
