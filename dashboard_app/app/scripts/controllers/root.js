@@ -1,7 +1,7 @@
 var app = angular.module("dbApp");
 app.controller('rootController', function(getUser, $cookieStore, $scope, $http) {
-    var overcolor = "black";
-    var workcolor = "orange";
+    var overcolor = "orange";
+    var workcolor = "black";
     var procolor = "black";
     var concolor = "black";
 
