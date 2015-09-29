@@ -14,7 +14,7 @@ app.controller("login", function($scope, $http, $state, $cookieStore, authentica
         if (authenticate.getUser() === "success") {
             // Log the user in
             //console.log("login");
-            $state.go("root.work");
+            $state.go("root.overview");
 
         } else {
             // Not log the user in

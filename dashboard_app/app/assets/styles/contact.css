@@ -1,26 +1,26 @@
-/*addit{
-	border-right:none;
-}*/
-.input-group-addon {
-  /*color: white;*/
-  background-color: white;
-  
-
+pre{
+	width: 100%;
 }
-#icon{
-    padding-right: 30px;
-
+.form-group{
+	width:101%;
+}
+#addit{
+	margin-left: 15px;
+}
+#confir{
+	margin-bottom: 10px;
+}
+#detail{
+	background-color: white;
+}
+#priority{
+	margin-left: 2px;
 }
 .form-horizontal{
-	margin-left: 25px;
+	margin-left: 10px;
 	margin-right: 10px;
 }
-.form-group .input-group{
-	/*margin-bottom: 15px;*/
-}
-.form-group select{
-	/*margin-bottom: 15px;*/
-}
+
 .btn-info{
 	float: left;
 }

@@ -1,12 +1,7 @@
 
 var app = angular.module("dbApp");
 app.controller('contact', function ($scope, $window,$http) {
-  // $scope.tabs = [
-  //   { title:'Information' },
-  //   { title:'Query', disabled: true },
-  //   { title:'Confirmation', disabled: true }
-  // ];
- 
+
   $http.get('/api/location')
   .then(function(response) {
         $scope.tabs=response.data.locations;
@@ -22,16 +17,24 @@ app.controller('contact', function ($scope, $window,$http) {
    });
 
   $scope.mytime = new Date();
-  $scope.info=true;
-  console.log($scope.fname);
-  console.log($scope.lname);
-  console.log($scope.email);
-  console.log($scope.phone);
-  console.log($scope.location);
-
+  $scope.rand=Math.floor(Math.random()*9999999999+1000000000);
   $scope.rate = 5;
   $scope.max = 10;
   $scope.isReadonly = false;
+
+  $scope.mailurl = function(value) {
+    return "mailto:"+value;
+  };
+
+   $scope.priority = function(value) {
+    console.log(value);
+    if(value<4)
+      return "Low";
+    else if(value>=4 && value<7)
+      return "Middle";
+    else
+      return "High";
+  };
 
   $scope.hoveringOver = function(value) {
     $scope.overStar = value;
@@ -45,6 +48,5 @@ app.controller('contact', function ($scope, $window,$http) {
     {stateOn: 'glyphicon-heart'},
     {stateOff: 'glyphicon-off'}
   ];
-
   
 });
