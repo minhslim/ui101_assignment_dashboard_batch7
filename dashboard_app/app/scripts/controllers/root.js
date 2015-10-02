@@ -1,5 +1,5 @@
 var app = angular.module("dbApp");
-app.controller('rootController', function(getUser, $cookieStore, $scope, $http) {
+app.controller('rootController', function(getUser, session, $window, $scope, $http) {
     var overcolor = "orange";
     var workcolor = "black";
     var procolor = "black";
@@ -18,15 +18,16 @@ app.controller('rootController', function(getUser, $cookieStore, $scope, $http) 
             };
 
     getUser.getUser().$promise.then(function(response) {
-        //console.log(response.name);
+        console.log(response);
          $scope.username = response.name;
     }, function() {
         console.log("SORRY");
     });
     
     $scope.logout = function() {
-       $cookieStore.remove("user");
-       $cookieStore.remove("psw");
+       session.destroy("user");
+       session.destroy("psw");
+       
     }
 
     $scope.toggle = function() {

@@ -1,19 +1,23 @@
 var app = angular.module("dbApp");
 
-app.controller("login", function($scope, $http, $state, $cookieStore, authenticate) {
+app.controller("login", function($scope, $window, $http, $state, session, authenticate) {
     $scope.key = function() {
         //alert('test');  
         $scope.one = {
             'opacity': '1'
         }
     };
+    
+   // session.set("user", $scope.userName);
+   // session.set("psw", $scope.password);
     $scope.reminder = true;
     $scope.login = function() {
-        $cookieStore.put("user", $scope.userName);
-        $cookieStore.put("psw", $scope.password);
+        session.set("user", $scope.userName);
+        session.set("psw", $scope.password);
         if (authenticate.getUser() === "success") {
             // Log the user in
             //console.log("login");
+            $window.location.reload("root.overview");
             $state.go("root.overview");
 
         } else {
@@ -24,3 +28,11 @@ app.controller("login", function($scope, $http, $state, $cookieStore, authentica
     }
 
 });
+// angular.module('dbApp')
+//     .controller('login', function($scope, authenticate) {
+//         // console.log('Login state');
+//         $scope.login = function(data) {
+//             authenticate.login(data, $scope); //call login service
+//         };
+
+//     });

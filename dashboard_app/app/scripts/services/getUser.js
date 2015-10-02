@@ -2,9 +2,8 @@
 
 var app = angular.module('dbApp');
 
-app.factory('getUser',function($resource,$cookieStore){
-	var user = $cookieStore.get('user');
-   console.log("getUser "+user);
+app.factory('getUser',function($resource,session){
+	var user = session.get('user');
 	return $resource('/api/getuser',{},{
          getUser: {
          	method:'GET',
@@ -24,3 +23,11 @@ app.factory('getUser',function($resource,$cookieStore){
  //            });
 });
 
+// 'use strict';
+
+// angular.module('dbApp')
+//   .factory('getUser', function($resource) {
+//     return $resource('/api/getuser', {}, {
+//       getUser: {method: 'GET'}
+//     });
+//   });

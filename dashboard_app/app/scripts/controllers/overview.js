@@ -1,8 +1,8 @@
 var app = angular.module("dbApp");
 
-app.controller("overview", function($scope, $http,$cookieStore) {
-    var user = $cookieStore.get("user");
-    //console.log(user);
+app.controller("overview", function($scope, $http,session) {
+    var user = session.get("user");
+    console.log(user);
 
  $http.get('/api/profile').then(function(response){
     $scope.liste = response.data.profiles;
