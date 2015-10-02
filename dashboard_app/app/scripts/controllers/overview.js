@@ -2,7 +2,7 @@ var app = angular.module("dbApp");
 
 app.controller("overview", function($scope, $http,$cookieStore) {
     var user = $cookieStore.get("user");
-    console.log(user);
+    //console.log(user);
 
  $http.get('/api/profile').then(function(response){
     $scope.liste = response.data.profiles;

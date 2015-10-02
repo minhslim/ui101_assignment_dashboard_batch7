@@ -18,14 +18,15 @@ app.controller('rootController', function(getUser, $cookieStore, $scope, $http) 
             };
 
     getUser.getUser().$promise.then(function(response) {
-        console.log(response);
+        //console.log(response.name);
          $scope.username = response.name;
     }, function() {
         console.log("SORRY");
     });
     
     $scope.logout = function() {
-       $cookieStore.put("user","");
+       $cookieStore.remove("user");
+       $cookieStore.remove("psw");
     }
 
     $scope.toggle = function() {

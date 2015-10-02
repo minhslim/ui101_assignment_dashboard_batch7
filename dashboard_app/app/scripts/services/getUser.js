@@ -4,6 +4,7 @@ var app = angular.module('dbApp');
 
 app.factory('getUser',function($resource,$cookieStore){
 	var user = $cookieStore.get('user');
+   console.log("getUser "+user);
 	return $resource('/api/getuser',{},{
          getUser: {
          	method:'GET',
