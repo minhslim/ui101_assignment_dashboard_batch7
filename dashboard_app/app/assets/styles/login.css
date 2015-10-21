@@ -1,6 +1,9 @@
-body {
-    background: no-repeat fixed center center url("../images/app/background.jpg");
+#log {
+    background: no-repeat fixed center center url("../images/src/app/background.jpg");
     background-size: cover; 
+    position:absolute;
+    left:0;
+    right:0;
 }
 
 p {
@@ -50,6 +53,12 @@ p {
 }
 
 
-.container {
-    width: 100%;
+
+
+
+
+
+
+
+
 }

@@ -15,10 +15,9 @@ app.controller("login", function($scope, $window, $http, $state, session, authen
         session.set("user", $scope.userName);
         session.set("psw", $scope.password);
         if (authenticate.getUser() === "success") {
-            // Log the user in
-            //console.log("login");
-            $window.location.reload("root.overview");
+           
             $state.go("root.overview");
+            // $window.location.reload("root.overview");
 
         } else {
             // Not log the user in

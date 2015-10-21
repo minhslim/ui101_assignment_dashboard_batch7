@@ -1,14 +1,12 @@
 var app = angular.module("dbApp");
-app.controller('rootController', function(getUser, session, $window, $scope, $http) {
+app.controller('rootController', function(getUser, session, $scope, $http) {
     var overcolor = "orange";
     var workcolor = "black";
     var procolor = "black";
     var concolor = "black";
 
     $scope.CurrentDate = new Date();
-    // $scope.username=$cookieStore.get('username');
     
-    //console.log(user);
     $scope.myStyle = {
                 'border-left': '3px solid #FF3300',
                 'color': '#FF3300'
@@ -18,7 +16,7 @@ app.controller('rootController', function(getUser, session, $window, $scope, $ht
             };
 
     getUser.getUser().$promise.then(function(response) {
-        console.log(response);
+        
          $scope.username = response.name;
     }, function() {
         console.log("SORRY");
@@ -27,7 +25,7 @@ app.controller('rootController', function(getUser, session, $window, $scope, $ht
     $scope.logout = function() {
        session.destroy("user");
        session.destroy("psw");
-       
+       $state.go("login");       
     }
 
     $scope.toggle = function() {

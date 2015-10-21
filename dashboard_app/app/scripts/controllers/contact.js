@@ -27,7 +27,7 @@ app.controller('contact', function ($scope, $window,$http) {
   };
 
    $scope.priority = function(value) {
-    console.log(value);
+    //console.log(value);
     if(value<4)
       return "Low";
     else if(value>=4 && value<7)

@@ -37,8 +37,7 @@ angular.module('dbApp', [
             })
             .state('root.producer', {
                 url: '/root/producer',
-                templateUrl: 'templates/producer.html',
-                controller: 'producer'
+                templateUrl: 'templates/producer.html'
             });
     })
   //   .run(function ($rootScope, authenticate) {
