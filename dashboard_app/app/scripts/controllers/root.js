@@ -1,5 +1,5 @@
 var app = angular.module("dbApp");
-app.controller('rootController', function(getUser, session, $scope, $http) {
+app.controller('rootController', function(getUser, session, $scope, $http,$state) {
     var overcolor = "orange";
     var workcolor = "black";
     var procolor = "black";
