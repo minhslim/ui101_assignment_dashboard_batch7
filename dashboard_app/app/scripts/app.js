@@ -40,7 +40,7 @@ angular.module('dbApp', [
                 templateUrl: 'templates/producer.html',
                 controller: 'producer'
             });
-    })
+    });
   //   .run(function ($rootScope, authenticate) {
   //   $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
   //     var requireLogin = toState.data.requireLogin;
