@@ -26,8 +26,12 @@ module.exports = function(config) {
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
             'bower_components/angular-mocks/angular-mocks.js',
             // endbower
-            "app/scripts/**/*.js", "test/mock/**/*.js", "test/spec/**/*.js"
+            "app/scripts/**/*.js", "test/mock/**/*.js", "test/spec/**/*.js",
+            "app/templates/*.html"
         ],
+        // preprocessors:{
+        //     "app/templates/*.html":['html2js']
+        // },
         // list of files / patterns to exclude
         exclude: [],
         // web server port

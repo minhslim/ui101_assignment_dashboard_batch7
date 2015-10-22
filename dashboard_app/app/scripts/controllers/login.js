@@ -6,8 +6,7 @@ app.controller("login", function($scope, $window, $http, $state, session, authen
         $scope.one = {
             'opacity': '1'
         }
-    };
-    
+    };   
    // session.set("user", $scope.userName);
    // session.set("psw", $scope.password);
     $scope.reminder = true;

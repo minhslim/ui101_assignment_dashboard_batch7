@@ -3,6 +3,14 @@ angular.module('dbApp')
         $http.get('/api/work')
             .success(function(data) {
                 $scope.works = data.works;
+                for (var i = 0; i <10; i++) {
+                    var newstr = "";
+                    var n = $scope.works[i].image;
+                    for (var j = 0; j < n.length; j += 14) {
+                        var tmp = n.substring(j, j + 14);
+                        $scope.works[i].image = "assets/images/src/" + tmp;
+                    }
+                }
             })
             .error(function(data, status, headers, config) {
                 console.log("error http call");
@@ -23,7 +31,7 @@ angular.module('dbApp')
         $scope.deleteItem = function(removeItem) {
             var items = $scope.works;
             var length = items.length;
-            	removeIndex = -1;
+            removeIndex = -1;
             for (var i = 0; i < length; i++) {
                 if (angular.equals(items[i], removeItem)) {
                     removeIndex = i;
@@ -34,8 +42,8 @@ angular.module('dbApp')
             //     $scope.works.splice(removeIndex, 1);
             //}
         };
-        $scope.delsubmit=function(){
-        	$scope.works.splice(removeIndex, 1);
+        $scope.delsubmit = function() {
+            $scope.works.splice(removeIndex, 1);
         };
         // $scope.editItem = function() {
         //     var modalInstance = $modal.open({
@@ -82,7 +90,7 @@ angular.module('dbApp')
         // };
         $scope.addsubmit = function() {
             var item = {
-            	image:'',
+                image: '',
                 author: $scope.addauthor,
                 comment: $scope.addcomment,
                 like: $scope.addlike,
@@ -100,7 +108,7 @@ angular.module('dbApp')
             $scope.works[indexFlag].author = $scope.editauthor;
             $scope.works[indexFlag].like = $scope.editlike;
             $scope.works[indexFlag].comment = $scope.editcomment;
-        	$scope.edittitle = '';
+            $scope.edittitle = '';
             $scope.editauthor = '';
             $scope.editlike = '';
             $scope.editcomment = '';
